@@ -1,0 +1,20 @@
+index:
+    path: /
+    controller: Symfony\Bundle\SecurityBundle\Controller\SecurityController::index
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+app_homepage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirect
+    defaults:
+        route: app_login
+        permanent: true
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::index
+contact_index:
+    path: /contact
+    controller: App\Controller\ContactController::index

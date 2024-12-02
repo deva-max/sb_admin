@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+            <link href="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.0.6/dist/css/sb-admin-2.min.css" rel="stylesheet">
+            
+            <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        {% endblock %}
+
+        <!-- Header Section -->
+        <nav class="navbar navbar-expand navbar-light bg-light static-top shadow">
+
+            <a class="navbar-brand mr-1" href="/">Contact</a>
+
+            <!-- Navbar Right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('contact_index') }}">Contact</a>
+                </li>
+                
+                <!-- Logout Button -->
+                <li class="nav-item">
+                    <form action="{{ path('app_logout') }}" method="POST" style="display: inline;">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.0.6/dist/js/sb-admin-2.min.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
